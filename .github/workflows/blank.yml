@@ -34,3 +34,15 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo ${{ matrix.envs.name }} ${{ matrix.envs.region}}
+
+      - name: expand template
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: sample.j2
+          output: sample.txt
+          variables: |
+            name=${{ matrix.envs.name }}
+            region=${{ matrix.envs.region }}
+
+      - name: show file
+        run: cat sample.txt
