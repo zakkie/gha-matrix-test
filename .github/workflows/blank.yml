@@ -22,10 +22,8 @@ jobs:
     
     strategy:
       matrix:
-        envs: [
-          {name: a001, region: us},
-          {name: b002, region: cn},
-        ]
+        - {name: a001, region: us}
+        - {name: b002, region: cn}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -34,4 +32,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo ${{ matrix.envs.name }} ${{ matrix.envs.region}}
+        run: echo ${{ matrix.name }} ${{ matrix.region}}
