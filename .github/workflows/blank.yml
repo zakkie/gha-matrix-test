@@ -39,7 +39,7 @@ jobs:
         uses: cuchi/jinja2-action@v1.2.0
         with:
           template: sample.j2
-          output: sample.txt
+          output_file: sample.txt
           variables: |
             name=${{ matrix.envs.name }}
             region=${{ matrix.envs.region }}
