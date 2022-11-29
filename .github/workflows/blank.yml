@@ -22,10 +22,9 @@ jobs:
     
     strategy:
       matrix:
-        envs: [
-          {name: a001, region: us},
-          {name: b002, region: cn},
-        ]
+        envs:
+          - {name: a001, region: us}
+          - {name: b002, region: cn}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
